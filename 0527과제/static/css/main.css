@@ -1,0 +1,40 @@
+/* main.css */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+#main{
+    width: 1000px;
+    margin:0 auto;
+    position:relative;
+}
+#blue, skyblue{display:inline-block;}
+#blue{
+    width:75px;
+    height: 25px;
+    background-color: blue;
+}
+#skyblue{
+    width:75px;
+    height: 25px;
+    background-color: skyblue;
+}
+.content:nth-child(1){
+    background: url(../image/탄소\ 운동.jpeg); no-repeat center;
+    background-size:cover;
+    height: 384px;
+    border-radius: 10px;
+}
+.content:nth-child(2){
+    background: url(../image/자원\ 고갈.jpeg); no-repeat center;
+    background-size:cover;
+    height: 384px;
+    border-radius: 10px;
+}
+.content:nth-child(3){
+    background: url(../image/다음\ 세대.jpeg); no-repeat center;
+    background-size:cover;
+    height: 384px;
+    border-radius: 10px;
+}
