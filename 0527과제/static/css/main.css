@@ -9,6 +9,10 @@
     margin:0 auto;
     position:relative;
 }
+#푸른 지구_image{
+    background:url(../image/푸른\ 지구.jpeg);
+    
+}
 #blue, skyblue{display:inline-block;}
 #blue{
     width:75px;
