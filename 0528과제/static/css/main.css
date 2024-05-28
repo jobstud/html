@@ -68,3 +68,8 @@ ul{
     border-radius: 15px;
     position:relative;
 }
+.main li:nth-child(2){
+    top:400px;
+    right:720px;
+    position:relative;
+}
