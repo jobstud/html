@@ -1,0 +1,70 @@
+/* main.css */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+ul{
+    list-style-type:none;
+}
+#wrap{
+    width:100%;
+    padding:1%;
+    margin:0 auto;
+    border-bottom:2px solid #ccc;
+    position:relative;
+}
+#header{
+    width:100%;
+    margin-bottom:20px;
+    position:relative;
+}
+#top{
+    background:white;
+    width:100%;
+}
+.top_text_box{
+    text-align:left;
+    padding-right:50px;
+}
+#top .top_text{
+    display:inline-block;
+    padding:8px 15px;
+}
+#logo_box{
+    padding:20px 0;
+    float:left;
+}
+#logo_box img{
+    width: 45px;
+}
+#menu_box{
+    position:relative;
+}
+#menu_list{
+    position:absolute;
+    left: 60px;
+}
+#menu_list .menu{
+    float: left;
+    position:relative;
+    top: 30px;
+    font-size:20px;
+    padding:0 10px;
+}
+.menu li:nth-child(2){
+    border-right:2px solid brown;
+}
+#menu_list .menu:hover{
+    cursor:pointer;
+    color:brown;
+    font-weight:800;
+}
+#slide{
+    top:50px;
+    width:1000px;
+    height:500px;
+    border:2px solid green;
+    border-radius: 15px;
+    position:relative;
+}
