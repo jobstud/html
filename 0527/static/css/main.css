@@ -153,4 +153,10 @@ ul{
 .foot_text{
     color:#bbb;
     font-weight:800;
+<<<<<<< HEAD
+=======
+}
+.foot_text p{
+    line-height:30px;
+>>>>>>> 239d820eecf3f170f82a58907bdd880719271e4b
 }
