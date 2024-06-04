@@ -1,0 +1,31 @@
+<!-- javascript_연산자.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 아메리카노 금액 : 2000원
+        // 인원 5명
+        // 내 계좌 잔액이 얼마인지 입력 받기 (prompt로 입력받으세요)
+        // 5명의 아메리카노를 구매할 수 있는가? 없는가?
+        // document.write로 출력하세요
+
+        계좌잔액 = parseInt(prompt("내 계좌 잔액은? : "))
+        아메리카노 = 2000;
+        인원 = 5;
+        document.write(계좌잔액 >= (아메리카노*인원));
+        document.write("true면 아메리카노 5개 구매가능, false면 아메리카노 5개 구매불가")
+
+        아메리카노 = 2000;
+        인원 = 5;
+        내계좌 = Number(prompt("내 통장 잔액 얼마?"));
+        document.write("구매가능? : "+(아메리카노 * 인원 <= 내계좌));
+                                  //(내계좌 >= 아메리카노 * 인원)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!-- javascript_연산자.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 하루에 총걸음수가 6000보를 넘으면 포인트점수 10점을 받을 수 있다.
+        // 이사람의 오늘 걸음수를 입력받아 현재 포인트가 몇점인지 출력하세요.
+        userPoint = 435; // 현재 포인트 점수 435점
+        step = Number(prompt("오늘 총 몇 걸음?"));
+        addPoint = (step > 6000)? 10 : 0;
+        userPoint = userPoint + addPoint;
+        document.write("현재 포인트 : "+userPoint);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- javascript_복습.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    // 주유소에서 휘발유를 넣고자 한다.
+    // 휘발유는 1,636원이다.
+    refuelCar = Number(prompt("주유 휘발유량 : "));
+    // prompt로 입력받은 값을 Number 함수를 통해 숫자로 변환
+    // 숫자로 변환해서 refuelCar 변수에 저장
+    gasolineCost = 1636; // 휘발유 리터당 금액
+    
+    gasPrice=gasolineCost * refuelCar ;
+    // 총 주유 금액은 리터당휘발유금액 * 주유휘발유량;
+    document.write("상품명 : 휘발유<br>");
+    document.write("판매량 : "+refuelCar+"<br>");
+    document.write("단가 : "+gasolineCost+"<br>");
+    document.write("지불금액 : "+gasPrice+"<br>");
+</script>
+</head>
+<body>
+    
+</body>
+</html>

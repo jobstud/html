@@ -1,0 +1,31 @@
+<!-- javascript_연산자.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("영어 대소문자가 다르다면 " + (word1 === word2));
+        console.log(word1.toLowerCase() === word2.toLowerCase());
+        // toLowerCase() -> 모든 영어문자를 소문자로 변환
+        // toUpperCase() -> 모든 영어문자를 대문자로 변환
+
+        // 조건연산자 - 조건식(비교연산자로 만들어진 식, 결과가 참 또는 거짓)을 비교하여
+        //            결과가 참이냐 거짓이냐에 따라 다음 실행할 코드를 설정할 수 있다.
+        age = 35;
+        (age >= 30) ? document.write("30살 넘었다.") : document.write("떡국 더 먹고와라");
+
+        score = 58;
+        결과 = (score >= 60) ? "합격" : "불합격";
+        document.write("<br><br>"+결과);
+        // 바이킹을 탑승하려면 키가 135 이상이여야 한다.
+        tall = Number(prompt("당신의 키는? "));
+        result = (tall >= 135)? "탑승가능" : "탑승불가";
+        document.write("<br><br> 탑승여부 : "+ result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

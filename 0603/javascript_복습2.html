@@ -1,0 +1,39 @@
+<!-- javascript_복습.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    // 문제 1.
+    // 삼각형의 넓이를 구하세요 (밑변 * 높이 / 2)
+    // 밑변과 높이를 prompt를 통해 입력받으세요.
+    bottom = Number(prompt("삼각형의 밑변 : "));
+    high = Number(prompt("삼각형의 높이 : "));
+    triangleExtent=(bottom * high) / 2;
+    document.write("삼각형의 넓이 : "+triangleExtent+"<br>");
+
+    base = parseInt(prompt("밑변 : "));
+    height = parseInt(prompt("높이 : "));
+    area = Math.floor(base * height /2) ;
+    document.write("삼각형 밑변 : "+ base +"<br>");
+    document.write("삼각형 높이 : "+height+"<br>");
+    document.write("삼각형의 넓이 : "+area+"<br>");
+
+    // Math.floor( 숫자 ) -> 정수만 추출
+    // Math.round( 숫자 ) -> 소수점 이하를 반올림
+    // 숫자저장된변수 num-20.345;
+    // 20.345 -> 20.3
+    // 소수점 몇자리까지 표현
+    // num.toFixed(1); -> 20.3
+    // 변수명.toFixed(소수점 자릿수); -> toFixed의 결과값은 문자열이다.
+    // parseFloat(변수명.toFixed(소수점 자릿수)); -> 실수라는 숫자로 사용가능.
+
+    document.write("<ul><li>1번리스트</li><li>2번리스트</li></ul>");
+</script>
+</head>
+<body>
+    
+</body>
+</html>
