@@ -184,12 +184,12 @@
         // num2=Math.floor(Math.random()*50)+1;
         // num3=((num1+num2)<=1200)?
         // document.write("<hr>");
-        num1=Math.floor(Math.random()*50)+1;
-        num2=Math.floor(Math.random()*50)+1;
+        // num1=Math.floor(Math.random()*50)+1;
+        // num2=Math.floor(Math.random()*50)+1;
 
-        mulNum = num1 * num2;
-        출력내용 = (mulNum >= 1200)? "큰수("+num1+","+num2+")" : `작은수(${num1},${num2})`;
-        document.write(출력내용);
+        // mulNum = num1 * num2;
+        // 출력내용 = (mulNum >= 1200)? "큰수("+num1+","+num2+")" : `작은수(${num1},${num2})`;
+        // document.write(출력내용);
 
         // 과제 1.
         // 소주 1잔에 수명이 2분 단축 된다.
@@ -202,6 +202,13 @@
 
         // 과제 2.
         // 두개의 주사위를 던져서 같은 값이 나온다면 당첨, 아니라면 꽝 출력
+
+        num1=Math.floor(Math.random()*6)+1;
+        num2=Math.floor(Math.random()*6)+1;
+
+        주사위 = (num1 == num2)? "당첨" : "꽝";
+        document.write(주사위);
+
     </script>
 </head>
 <body>
