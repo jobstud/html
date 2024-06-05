@@ -1,0 +1,48 @@
+<!-- javascript_반복문.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script>
+        // switch 문 - 여러개의 선택지 중 하나를 선택하여 동작
+        // switch ~ case문 - case로 선택지를 만들어서 동작할 수 있게 한다.
+        // 선택된 case의 내용이 실행되고 switch문의 }를 만날때까지 실행을 멈추지 않는다.
+        // { } 중괄호의 의미는 코드의 { } 여기가 끝
+        // break는 제어문의 실행을 중단 시키는 기능을 가지고 있다.
+        // break는 if문에 단독으로 사용하면 안된다.
+        switch(10){
+            case 5:
+                document.write("5를 선택했네");
+                break;
+            case 8:
+                break;
+            case 10:
+                document.write("10을 선택했네");
+                break;
+            case 100:
+                break;
+        }
+        
+        // case 뒤에 붙일 수 있는 데이터는 정수, 실수, 상수, 문자열 모두 가능
+
+        menu = prompt("실행할 메뉴를 입력하세요(복사-c, 붙여넣기-v, 잘라내기-x)");
+
+        switch(menu){
+            case "c":
+                document.write("복사 했습니다.");
+                break;
+            case "v":
+                document.write("붙여넣기 했습니다.");
+                break;
+            case "x":
+                document.write("잘라내기 했습니다.");
+                break;
+        }
+    </script>
+<body>
+    
+</body>
+</html>
