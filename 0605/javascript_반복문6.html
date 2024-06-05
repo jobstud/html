@@ -1,0 +1,32 @@
+<!-- javascript_반복문.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script>
+        // 1~9 중의 숫자를 입력받아서 입력한 숫자에 맞는 구구단을 출력하세요.
+        // var i=7;
+        // while(i<=60){
+        //     document.write("<br>"+i);
+        //     i=i+7; //증감식
+        // }
+        // var i=1;
+        // while(i<=9){
+        //     document.write("<br>7 * "+i+"="+(i*7));
+        //     i++;
+        // }
+        num = Number(prompt("구구단 몇단?"));
+
+        var i=1;
+        while(i<=9){
+            document.write(`<br> ${num} * ${i} = ${num*i}`);
+            i++;
+        }
+    </script>
+<body>
+    
+</body>
+</html>
