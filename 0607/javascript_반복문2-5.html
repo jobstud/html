@@ -1,0 +1,43 @@
+<!-- javascript_반복문2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 초기값 -> 조건식 비교 -> 참 -> {} 실행 -> 증감식 -> 조건식 비교
+        // do ~ while()
+        // 동작순서 : 초기값 -> {} 실행 -> 증감식 -> 조건식 비교 -> 참 -> {} 실행 -> 증감식 -> 조건식 비교
+
+        var i=1; // i<=5
+        do{
+            document.write(i + "<br>");
+            i++
+        }while(i<=5);
+
+        var w=10;
+        while(w<10){
+            document.write( w+"while문<bt>");
+            w++;
+        }
+        for(var f=10; f<10; f++){
+            document.write(f+"for문<br>");
+        }
+        var d=10;
+        do{
+            documnent.write(d+"do~while문 <br>");
+            d++;
+        }while(d<10);
+        // 네트워크 프로그램에 연결 부분을 do~while로 만든다.
+        /*
+            do{
+                다른 컴퓨터 접속 시도 코드
+            }while(연결됨?);
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
