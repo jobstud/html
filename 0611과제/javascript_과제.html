@@ -1,0 +1,32 @@
+<!-- javascript_과제.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function generateRandomNumbers() {  // 숫자를 생성하고 배열에 저장하는 함수 : generateRandomNumbers
+            let numbers = [];
+            for (let i=0; i<20; i++){
+                numbers.push(Math.floor(Math.random()*50)+1);   // 버튼을 클릭하면 1부터 50 사이의 랜덤한 숫자를 생성하고, 이를 배열에 저장
+            }
+            displayNumbers(numbers);    // 화면에 숫자를 표시할 함수 : displayNumbers
+        }
+        function displayNumbers(numbers){
+            let output = "";
+            for (let i=0; i<numbers.length; i++){
+                output += numbers[i] + " ";
+                if((i+1)%4 === 0){
+                    output += "<br>";
+                }
+            }
+            document.getElementById("result").innerHTML=output;
+        }
+    </script>
+ </head>
+ <body>
+    <button onclick="generateRandomNumbers()">숫자 랜덤 버튼</button>  <!-- 클릭할 버튼 -->
+    <div id="result"></div>
+ </body>
+ </html>
