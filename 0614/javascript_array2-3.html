@@ -1,0 +1,33 @@
+<!-- javascript_array2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        let score = [68, 79, 83, 95, 65];
+        let stdName = ["이순신","김유신","장영실","한석봉","임꺽정"];
+        // .indexOf(데이터)는 배열에서 해당 데이터가 몇번째 인덱스에 있는지
+        // 인덱스 값을 반환 한다. 배열에 해당 데이터가 없다면 -1이 나온다.
+        // 이순신은 68점, 김유신은 79점, 장영실은 83점 ...
+        // 학생들 중 가장 점수가 높은 학생은 누구인가??
+
+    let max = score[0];
+    for(var i=0; i< score.length; i++){
+        if(max<score[i]) max = score[i];    // 가장 높은 점수 구하기
+    }
+    
+    // 학생의 이름을 입력하여 학생의 점수를 출력한다면
+
+    var inputName="장영실";
+    let idx = stdName.indexOf(inputName); // 학생 이름이 몇번째 인덱스에 있는가?
+    document.write(inputName+" 학생 점수 : "+ score[idx]);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!-- javascript_array.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script>
+    let tall=[157, 198, 185, 172, 165, 156, 192, 189, 173, 169];
+    for(var i=0; i<10; i++){
+        document.write(tall[i]+"<br>");
+    }
+    document.write(tall[0]);
+    document.write(tall[1]);
+    document.write(tall[2]);
+
+    let name = [];
+    name.push("이순신");
+    name.push("김유신");
+    name.push("최영");
+    name.push("이성계");
+
+    name.sort();
+    document.write(name);
+    document.write("<br>"+name.length);
+    name.pop();
+    document.write("<br>"+name);
+    document.write("<br>"+(name.indexOf("이순향")));
+    document.write("<br>"+name.splice(1,1));
+    document.write("<br>"+name);
+
+    document.write("<br>"+name.slice(1));
+
+    let score=[95,89,74];
+    var sum=0;
+    for(var i=0; i<score.length; i++){
+            sum = sum + score[i];
+    }
+    document.write("<br>총 합: "+sum);
+</script>
+ </head>
+ <body>
+    <div class="box1"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box2"></div>
+ </body>
+ </html>
