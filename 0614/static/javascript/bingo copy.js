@@ -29,9 +29,7 @@ function bingoCheck(){
         가로 세로 대각선 빙고인지 확인하는 내용과
         빙고가 5개 완성되면 게임 끝나게 하기
     */
-    checkBingo();
 }
-
 function start(){
     $(".num").click(bingoCheck);    // 숫자가 표시된 td를 클릭하면
     // 빙고 게임을 위한 숫자 배치
@@ -74,61 +72,4 @@ function draw(){    // 배열의 값 테이블(td)에 출력
     for(var i=0; i<td.length; i++){
         td.eq(i).text(bingo[i]);    // td[i]를 사용해야 하는 경우도 있다.
     }
-}
-
-function checkBingo(){  // 현재 빙고 상태를 검사하여 완성되었는지 확인
-    let bingoCount=0;
-    for(var i=0; i<5; i++){
-        var rowComplete=true;   // 가로 빙고
-        for (var j=0; j<5; j++){
-            var idx=i*5+j;
-            if(bingo[idx]!==0){
-                rowComplete=false;
-                break;
-            }
-        }
-        if(rowComplete){
-            bingoCount++;
-        }
-    }
-    for(var i=0; i<5; i++){
-        var colComplete=true;   // 세로 빙고
-        for(var j=0; j<5; j++){
-            var idx=j*5+i;
-            if(bingo[idx]!==0){
-                colComplete=false;
-                break;
-            }
-        }
-        if(colComplete){
-            bingoCount++;
-        }
-    }
-    let diagonal1Complete=true;
-    let diagonal2Complete=true;
-    //대각선 빙고 왼쪽 위부터 오른쪽 아래
-    for(let i=0; i<5; i++){
-        let idx1=i*5+i;
-        if(bingo[idx1]!==0){
-            diagonal1Complete=false;
-        }
-        let idx2=i*5+(4-i);
-        if(bingo[idx2]!==0){
-            diagonal2Complete=false;
-        }
-    }
-    if(diagonal1Complete){
-        bingoCount++;
-    }
-    if (diagonal2Complete){
-        bingoCount++;
-    }
-    if(bingoCount>=5){
-        endGame();
-    }
-}
-
-function endGame(){
-    clearInterval(time);
-    alert("빙고 완성")
-}
+};
