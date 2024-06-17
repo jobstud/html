@@ -5,40 +5,55 @@ let play초 = 0; // 빙고 게임 진행 시간 - 초
 let time = 0; // setInterval 의 핸들값
 let bingo = []; // 25개 숫자를 저장할 빈 배열 선언
 
-$(function(){   // 브라우저에 모두 표시되면 실행 되는 함수 - window.onload
-    // 빙고 시작 버튼 클릭 이벤트
+$(function(){
     $("#start").click(start);
-    // var tdClick=document.getElementsByClassName("num");
-    // for(var i=0; i<tdClick.length; i++){
-    // for(var i in tdClick){
-    //     tdClick[i].addEventListener('click', function(){alert("클릭 ");});
-    // }
     });
 function bingoCheck(){
-    // jquery에서 css 넣는 방법 - .css('속성', '값');
     $(this).css('background','black');
     $(this).css('color','white');
 
-    // 클릭한 td에 표시된 숫자를 배열에서 0으로 변경
-    // 배열에 0이 저장된 곳은 클릭한 숫자이다.
-    var idx = $(".num").index(this); // 클릭한 td가 몇번째 인덱스인가
-    bingo[idx]=0; // 해당 td 위치와 같은 bingo 배열에 0으로 변경
-    // 4번째 td 클릭하면 idx는 3이고 bingo[3]=0으로 변경하겠다는 내용
-    /* 
-        빙고 몇줄??
-        가로 세로 대각선 빙고인지 확인하는 내용과
-        빙고가 5개 완성되면 게임 끝나게 하기
-    */
-    checkBingo();
-}
+    var idx = $(".num").index(this);
+    bingo[idx]=0;
+    console.log(bingo);
 
+    var 가로=0;
+    var end=0;
+    var 세로=0;
+    var 대각선1=0;
+    var 대각선2=0;
+
+    for(var i=0; i<5; i++){
+        for(var k=0; k<5; k++){
+            if(bingo[i*5+k]==0) 가로++;
+            if(bingo[k*5+i]==0) 세로++;
+        }
+        if(bingo[i*6]==0) 대각선1++;
+        if(bingo[i*4+4]==0) 대각선2++;
+        if(대각선1==5) end++;
+        if(대각선2==5) end++;
+        if(가로==5) end++;
+        if(세로==5) end++;
+        가로=0;
+        세로=0;
+    }
+    endCount=end;
+    $("#ok").text(endCount);
+    if(endCount==5){
+        alert("빙고 완성!!");
+        endGame();
+    }
+    else if(endCount>5){
+        alert("게임 오버!!!");
+        endGame();
+    }
+}
+function endGame(){
+    $(".num").off();
+    clearInterval(time);
+}
 function start(){
-    $(".num").click(bingoCheck);    // 숫자가 표시된 td를 클릭하면
-    // 빙고 게임을 위한 숫자 배치
-    // 빙고 시작 버튼 감추기
-    // 빙고 진행 상황 보이기
-    // $("#start").hide();
-    $(this).hide(); // this는 현재 함수를 실행한 객체 - div#start
+    $(".num").click(bingoCheck);
+    $(this).hide();
     $("#screen").show();
     $("#ok").text(endCount);
 
@@ -55,80 +70,23 @@ function start(){
         var timeText = `${분Text}:${초Text}`;
         
         $("#playTime").text(timeText);
-    }, 1000);   // 1000 은 1초이다.
+    }, 1000);
 
-    init(); // 25개 숫자 배열에 저장하기
-    draw(); // 화면에 출력하기
+    init();
+    draw();
 }
 
 function init(){
     while(bingo.length!=25){
-        var tmp = Math.floor(Math.random()*50)+1;
+        var tmp = Math.floor(Math.random()*100)+1;
         if(bingo.indexOf(tmp) ==-1)
             bingo.push(tmp);
     }
 }
-function draw(){    // 배열의 값 테이블(td)에 출력
+function draw(){
     var td = $(".num");
     console.log(td);
     for(var i=0; i<td.length; i++){
-        td.eq(i).text(bingo[i]);    // td[i]를 사용해야 하는 경우도 있다.
+        td.eq(i).text(bingo[i]);
     }
-}
-
-function checkBingo(){  // 현재 빙고 상태를 검사하여 완성되었는지 확인
-    let bingoCount=0;
-    for(var i=0; i<5; i++){
-        var rowComplete=true;   // 가로 빙고
-        for (var j=0; j<5; j++){
-            var idx=i*5+j;
-            if(bingo[idx]!==0){
-                rowComplete=false;
-                break;
-            }
-        }
-        if(rowComplete){
-            bingoCount++;
-        }
-    }
-    for(var i=0; i<5; i++){
-        var colComplete=true;   // 세로 빙고
-        for(var j=0; j<5; j++){
-            var idx=j*5+i;
-            if(bingo[idx]!==0){
-                colComplete=false;
-                break;
-            }
-        }
-        if(colComplete){
-            bingoCount++;
-        }
-    }
-    let diagonal1Complete=true;
-    let diagonal2Complete=true;
-    //대각선 빙고 왼쪽 위부터 오른쪽 아래
-    for(let i=0; i<5; i++){
-        let idx1=i*5+i;
-        if(bingo[idx1]!==0){
-            diagonal1Complete=false;
-        }
-        let idx2=i*5+(4-i);
-        if(bingo[idx2]!==0){
-            diagonal2Complete=false;
-        }
-    }
-    if(diagonal1Complete){
-        bingoCount++;
-    }
-    if (diagonal2Complete){
-        bingoCount++;
-    }
-    if(bingoCount>=5){
-        endGame();
-    }
-}
-
-function endGame(){
-    clearInterval(time);
-    alert("빙고 완성")
-}
+};
